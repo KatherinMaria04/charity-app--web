@@ -1,7 +1,5 @@
 package controller;
 
-import java.sql.SQLException;
-import java.util.List;
 
 import com.google.gson.JsonObject;
 import com.revature.dao.AdminDao;

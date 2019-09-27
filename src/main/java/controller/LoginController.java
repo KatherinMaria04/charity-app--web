@@ -1,11 +1,10 @@
-package com.revature.controller.servlet;
+package controller;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.revature.controller.AdminAccessController;
 import com.revature.dao.IUserDao;
 import com.revature.dao.UserDao;
-import com.revature.model.AdminAccess;
+
 import com.revature.model.UserActivity;
 import com.revature.model.UserDetails;
 

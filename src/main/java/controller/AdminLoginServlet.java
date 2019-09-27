@@ -1,4 +1,4 @@
-package com.revature.controller;
+package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.controller.servlet.AdminLoginController;
-import com.revature.controller.servlet.LoginController;
+import controller.AdminLoginController;
+
+
 
 /**
  * Servlet implementation class AdminLoginServlet

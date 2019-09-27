@@ -1,13 +1,9 @@
-package com.revature.controller.servlet;
-
+package controller;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.revature.dao.AdminDao;
 import com.revature.dao.IAdminDao;
-import com.revature.dao.IUserDao;
-import com.revature.dao.UserDao;
 import com.revature.model.AdminLogin;
-import com.revature.model.UserDetails;
 
 public class AdminLoginController {
 	public static String adminLogin(String name, String password2) {
