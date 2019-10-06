@@ -21,7 +21,7 @@ public class AmountUpdateServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 			
-			 String requestType = request.getParameter("Requestype");
+			 String requestType = request.getParameter("RequestType");
 		        long amountRequested =Long.parseLong(request.getParameter("targetAmount"));
 		        String json = AdminController.updateDonation( requestType,amountRequested);
 		        PrintWriter out = response.getWriter();
