@@ -89,7 +89,7 @@ public class LoginController {
 				 user.setDonatingamount(DonatingAmount);;
 				 
 				ud.donarFund(user);
-				//ud.updatedonation(user);
+				ud.updateDonation(user);
 			} catch (Exception e) {
 				errorMessage = e.getMessage();
 			}
@@ -109,9 +109,9 @@ public class LoginController {
 	     
 
 	    public static void main(String[] args) {
-	    	//testLogin();
-	    	//testRegister();
-	    	testDonarFund();
+	   //testLogin();
+	    testRegister();
+	    	//testDonarFund();
 	    	
 	    }
 	    	
@@ -143,7 +143,7 @@ public class LoginController {
 		        public static void testDonarFund() {
 			         
 		        	LoginController controller = new LoginController();
-		    		String json = controller.donarFund("abc","medical",8000);
+		    		String json = controller.donarFund("kathy","medical",8000);
 		    		System.out.println(json);
 	         
 	    }

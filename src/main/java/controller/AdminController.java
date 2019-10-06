@@ -6,6 +6,9 @@ import java.util.List;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.revature.dao.AdminDao;
+import com.revature.dao.IAdminDao;
+import com.revature.dao.IUserDao;
+import com.revature.dao.UserDao;
 import com.revature.model.AdminAccess;
 import com.revature.model.UserActivity;
 import com.revature.model.UserDetails;
@@ -93,13 +96,43 @@ public class AdminController {
 		
 		
 	}
+	  
+	public static String updateDonation(String requestType, long amountRequested) {
+        String errorMessage = null;
+        String message = null;
+        IUserDao user = new UserDao();
+        UserActivity us= null;
+        try {
+			 
+			 us.setRequesttype(requestType);
+			 us.setDonatingamount(amountRequested);
+			 user.updateDonation(us);
+		} catch (Exception e) {
+			errorMessage = e.getMessage();
+		}
+		
+		JsonObject obj = new JsonObject();
+		if (errorMessage != null) {
+			obj.addProperty("errorMessage", errorMessage);
+		}
+		else {
+			obj.addProperty("message", "Successfully Updated");
+		}
+		
+		String json = obj.toString();
+		return json;
+		
+		
+	}
+	
 	
        
         
 	public static void main(String[] args) {
 		//testrequestDetails();
 		//testdonarDetails();
-		testfindAll();
+		//testfindAll();
+		testupdateDonation();
 	}
 		
 		public static void testrequestDetails() {
@@ -121,5 +154,16 @@ public class AdminController {
 			String json = controller.findAll();
 			System.out.println(json);
 		}
+		
+		public static void testupdateDonation() {
+		System.out.println("Test Case 1: Valid User");
+        String validUserJson = AdminController.updateDonation("foood", 10000);
+        System.out.println(validUserJson);
+         
+        System.out.println("Test Case 2: Invalid User");
+        String invalidUserJson = AdminController.updateDonation("kathy", -490);
+        System.out.println(invalidUserJson);
+    	}
+		
 }
 	
